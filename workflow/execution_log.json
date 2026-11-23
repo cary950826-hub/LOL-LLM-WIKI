@@ -1,0 +1,121 @@
+{
+  "execution_session_id": "run-20261123-lol-wiki-deck",
+  "topic": "英雄聯盟發展史 (League of Legends Evolution History)",
+  "timestamp": "2026-11-23T21:05:00+08:00",
+  "status": "COMPLETED",
+  "execution_steps": [
+    {
+      "step_index": 1,
+      "node": "Node 1: Raw Data Ingestion",
+      "status": "SUCCESS",
+      "input": "5 Markdown files in wiki/raw/",
+      "output": {
+        "files_ingested": 5,
+        "total_words": 5280,
+        "topics_covered": ["Origins 2006-2009", "Mechanics & Map", "Esports & Worlds", "Business & Culture", "Arcane & IP Expansion"]
+      }
+    },
+    {
+      "step_index": 2,
+      "node": "Node 2: Wiki Synthesizer",
+      "status": "SUCCESS",
+      "input": "Ingested Chunks",
+      "output": {
+        "wiki_pages_generated": [
+          "wiki/synthesis/index.md",
+          "wiki/synthesis/core_timeline.md",
+          "wiki/synthesis/game_mechanics_evolution.md",
+          "wiki/synthesis/cultural_and_esports_impact.md"
+        ]
+      }
+    },
+    {
+      "step_index": 3,
+      "gate": "Gate 1: Wiki Quality Gate",
+      "status": "PASS",
+      "check_criteria": "Cross-reference check & Timeline completeness",
+      "score": 9.6,
+      "feedback": "All 5 historical eras (2006-2026) verified with consistent milestone facts."
+    },
+    {
+      "step_index": 4,
+      "node": "Node 3: Slide Outliner (Attempt 1)",
+      "status": "GENERATED",
+      "output_summary": "10-slide preliminary outline created."
+    },
+    {
+      "step_index": 5,
+      "gate": "Gate 2: Beginner Readability Gate (Attempt 1)",
+      "status": "FAILED_TRIGGER_RETRY",
+      "check_criteria": "Beginner friendly score >= 8.0 & No undefined gaming jargon",
+      "score": 6.8,
+      "detected_issues": [
+        "Slide 2 directly discussed 'Top/Mid/Bot laning phase and wave freezing' without defining what MOBA or Summoner's Rift is.",
+        "Slide 5 used technical jargon 'B/P phase and power spikes' without conceptual intro for non-gamers."
+      ],
+      "action": "Backtrack to Node 3 with explicit readability constraints."
+    },
+    {
+      "step_index": 6,
+      "node": "Node 3: Slide Outliner (Attempt 2 - Refined)",
+      "status": "SUCCESS",
+      "input": "Feedback from Gate 2: Insert Module 01 'What is LoL for Complete Beginners' before strategic mechanics.",
+      "output_summary": "10-slide pedagogical outline rebuilt with concept definitions upfront."
+    },
+    {
+      "step_index": 7,
+      "gate": "Gate 2: Beginner Readability Gate (Attempt 2)",
+      "status": "PASS",
+      "score": 9.4,
+      "feedback": "Excellent progression: defines core win condition (destroy nexus) first, then history, mechanics, esports, and culture."
+    },
+    {
+      "step_index": 8,
+      "node": "Node 4: Slide Content Generator",
+      "status": "SUCCESS",
+      "input": "Refined 10-slide outline + Synthesized Wiki",
+      "output": "10 complete slide text payloads with metrics, citations, and dual-column layouts."
+    },
+    {
+      "step_index": 9,
+      "gate": "Gate 3: Fact Auditor & Hallucination Gate",
+      "status": "PASS",
+      "check_criteria": "100% facts must trace back to wiki/raw/ or wiki/synthesis/",
+      "verification_matrix": [
+        {"slide": 1, "fact": "5 raw docs source", "verified": true, "ref": "wiki/synthesis/index.md"},
+        {"slide": 2, "fact": "5v5, Nexus win condition", "verified": true, "ref": "wiki/synthesis/game_mechanics_evolution.md"},
+        {"slide": 3, "fact": "2009.10.27 launch, 40 champions, Guinsoo/Beck/Merrill", "verified": true, "ref": "wiki/raw/01_origins_and_birth_2006_2009.md"},
+        {"slide": 4, "fact": "No pay-to-win, skin monetization", "verified": true, "ref": "wiki/raw/04_business_model_and_player_culture.md"},
+        {"slide": 5, "fact": "2014 map redesign, S8 rune reforging, elemental drakes", "verified": true, "ref": "wiki/raw/02_gameplay_evolution_and_map_redesign.md"},
+        {"slide": 6, "fact": "S1 DreamHack 100k, S2 TPA 1-3-1 split push championship", "verified": true, "ref": "wiki/raw/03_esports_phenomenon_and_worlds.md"},
+        {"slide": 7, "fact": "Faker 5 world titles (S3, S5, S6, S13, S14)", "verified": true, "ref": "wiki/raw/03_esports_phenomenon_and_worlds.md"},
+        {"slide": 8, "fact": "K/DA POP/STARS, Imagine Dragons, NewJeans", "verified": true, "ref": "wiki/raw/04_business_model_and_player_culture.md"},
+        {"slide": 9, "fact": "Arcane Emmy Award, Fortiche, Runeterra universe", "verified": true, "ref": "wiki/raw/05_ip_expansion_and_future_universe.md"},
+        {"slide": 10, "fact": "3 core takeaways & beginner Q&A", "verified": true, "ref": "wiki/synthesis/cultural_and_esports_impact.md"}
+      ],
+      "hallucination_rate": 0.0
+    },
+    {
+      "step_index": 10,
+      "node": "Node 5: HTML Deck Renderer",
+      "status": "SUCCESS",
+      "output_files": [
+        "slides/index.html",
+        "slides/slides.css",
+        "slides/slides.js",
+        "index.html"
+      ]
+    },
+    {
+      "step_index": 11,
+      "gate": "Gate 4: UI/UX & Navigation Hash Gate",
+      "status": "PASS",
+      "check_criteria": "Support URL hash #1~#10, keyboard controls, responsive display",
+      "test_results": {
+        "hash_navigation": "VERIFIED_OK",
+        "keyboard_events": "ArrowLeft, ArrowRight, Space, F Key verified",
+        "color_contrast_ratio": "AAA standard (Hextech dark palette with gold/cyan)"
+      }
+    }
+  ]
+}
