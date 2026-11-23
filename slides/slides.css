@@ -1,0 +1,328 @@
+:root {
+  --bg-primary: #091428;
+  --bg-secondary: #0a1b2d;
+  --bg-card: rgba(16, 34, 56, 0.75);
+  --border-gold: #c8aa6e;
+  --gold-glow: rgba(200, 170, 110, 0.3);
+  --accent-cyan: #0ac8b9;
+  --cyan-glow: rgba(10, 200, 185, 0.3);
+  --text-main: #f0e6d2;
+  --text-muted: #a09b8c;
+  --text-highlight: #ffffff;
+  --font-base: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Microsoft JhengHei", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-main);
+  font-family: var(--font-base);
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  user-select: none;
+}
+
+/* Background Atmosphere */
+.bg-glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 50% 20%, rgba(10, 200, 185, 0.12), transparent 60%),
+              radial-gradient(circle at 80% 80%, rgba(200, 170, 110, 0.08), transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Header & Progress Bar */
+header {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 36px;
+  border-bottom: 1px solid rgba(200, 170, 110, 0.2);
+  background: rgba(9, 20, 40, 0.85);
+  backdrop-filter: blur(10px);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-badge {
+  background: linear-gradient(135deg, #c8aa6e, #785a28);
+  color: #091428;
+  font-weight: 800;
+  font-size: 0.75rem;
+  padding: 4px 8px;
+  border-radius: 4px;
+  letter-spacing: 1px;
+}
+
+.brand-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-main);
+  letter-spacing: 0.5px;
+}
+
+.progress-track {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.progress-fill {
+  height: 100%;
+  width: 10%;
+  background: linear-gradient(90deg, var(--accent-cyan), var(--border-gold));
+  transition: width 0.35s ease;
+  box-shadow: 0 0 10px var(--cyan-glow);
+}
+
+/* Slides Container */
+.deck {
+  position: relative;
+  flex: 1;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 40px;
+}
+
+.slide {
+  position: absolute;
+  width: 90%;
+  max-width: 1100px;
+  height: 82%;
+  max-height: 680px;
+  background: var(--bg-card);
+  border: 1px solid rgba(200, 170, 110, 0.3);
+  border-radius: 12px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 20px rgba(10, 200, 185, 0.05);
+  padding: 44px 56px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(20px) scale(0.98);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow-y: auto;
+}
+
+.slide.active {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0) scale(1);
+}
+
+/* Slide Typography & Elements */
+.slide-category {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--accent-cyan);
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+
+.slide-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--text-highlight);
+  margin-bottom: 12px;
+  line-height: 1.25;
+}
+
+.slide-subtitle {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  margin-bottom: 24px;
+  line-height: 1.5;
+}
+
+.slide-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Grids and Cards */
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+
+.card {
+  background: rgba(9, 20, 40, 0.6);
+  border: 1px solid rgba(200, 170, 110, 0.2);
+  border-radius: 8px;
+  padding: 20px;
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent-cyan);
+}
+
+.card-title {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--border-gold);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.card-text {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #d0c8b8;
+}
+
+/* Key Metrics / Highlights */
+.stat-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: rgba(10, 200, 185, 0.05);
+  border: 1px dashed rgba(10, 200, 185, 0.3);
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.stat-number {
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: var(--accent-cyan);
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+/* Timeline Components */
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  position: relative;
+  padding-left: 20px;
+  border-left: 2px solid rgba(200, 170, 110, 0.3);
+}
+
+.timeline-item {
+  position: relative;
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -27px;
+  top: 4px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--accent-cyan);
+  box-shadow: 0 0 8px var(--accent-cyan);
+}
+
+.timeline-year {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--border-gold);
+}
+
+.timeline-desc {
+  font-size: 0.95rem;
+  color: #ded6c5;
+}
+
+/* Footer & Controls */
+footer {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 36px;
+  background: rgba(9, 20, 40, 0.9);
+  border-top: 1px solid rgba(200, 170, 110, 0.2);
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.btn-nav {
+  background: rgba(200, 170, 110, 0.1);
+  border: 1px solid var(--border-gold);
+  color: var(--border-gold);
+  padding: 6px 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.85rem;
+  transition: all 0.2s;
+}
+
+.btn-nav:hover {
+  background: var(--border-gold);
+  color: #091428;
+}
+
+.slide-counter {
+  font-family: monospace;
+  font-size: 1rem;
+  color: var(--accent-cyan);
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.shortcuts {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.key-badge {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-family: monospace;
+  color: var(--text-main);
+}
