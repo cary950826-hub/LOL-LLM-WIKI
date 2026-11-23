@@ -326,3 +326,23 @@ footer {
   font-family: monospace;
   color: var(--text-main);
 }
+
+.slide-footer-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  color: var(--border-gold);
+  text-decoration: none;
+  border-bottom: 1px dashed rgba(200, 170, 110, 0.6);
+  padding-bottom: 2px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.slide-footer-link:hover {
+  color: var(--accent-cyan);
+  border-bottom-color: var(--accent-cyan);
+  transform: translateX(2px);
+}
+
