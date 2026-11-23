@@ -36,7 +36,7 @@
 知識庫至少收錄並解析了 5 篇核心領域文獻：
 * 📄 [`wiki/raw/01_origins_and_birth_2006_2009.md`](wiki/raw/01_origins_and_birth_2006_2009.md) - 起源與誕生：從 DotA Allstars 到 Riot 獨立商業引擎、初始 40 位英雄。
 * 📄 [`wiki/raw/02_gameplay_evolution_and_map_redesign.md`](wiki/raw/02_gameplay_evolution_and_map_redesign.md) - 機制變革：2014 地圖重塑、S8 符文重鑄、元素飛龍與神話裝備試驗。
-* 📄 [`wiki/raw/03_esports_phenomenon_and_worlds.md`](wiki/raw/03_esports_phenomenon_and_worlds.md) - 電競王朝：S1 瑞典地下室、2012 S2 台北暗殺星 (TPA) 奇蹟、Faker 五冠神話與 AR 巨龍。
+* 📄 [`wiki/raw/03_esports_phenomenon_and_worlds.md`](wiki/raw/03_esports_phenomenon_and_worlds.md) - 電競王朝：S1 瑞典地下室、2012 S2 台北暗殺星 (TPA) 奇蹟、Faker 六冠神話與 AR 巨龍。
 * 📄 [`wiki/raw/04_business_model_and_player_culture.md`](wiki/raw/04_business_model_and_player_culture.md) - 商業與文化：No Pay-to-Win 造型經濟、K/DA 虛擬女團音樂、社群迷因文化。
 * 📄 [`wiki/raw/05_ip_expansion_and_future_universe.md`](wiki/raw/05_ip_expansion_and_future_universe.md) - 宇宙擴展：符文大地世界觀重塑、Netflix《奧術》艾美獎成就、衍生遊戲矩陣與 MMO 展望。
 
@@ -55,7 +55,7 @@
 | **Slide 4 (#4)** | 商業模式革命 | `wiki/raw/04_business_model_and_player_culture.md` | 比較 Pay-to-Win 與 Fair-to-Play 的本質差距 |
 | **Slide 5 (#5)** | 機制演進：符文重鑄 | `wiki/raw/02_gameplay_evolution_and_map_redesign.md` | 說明打破數值付費、走向動態地圖的博弈設計 |
 | **Slide 6 (#6)** | 電競開端：S1 至 S2 TPA | `wiki/raw/03_esports_phenomenon_and_worlds.md` | 講述台北暗殺星逆襲歷史，點燃亞洲熱潮 |
-| **Slide 7 (#7)** | 電競之神：Faker 五冠王朝 | `wiki/raw/03_esports_phenomenon_and_worlds.md` | 介紹十載堅持的電競代表人物李相赫 |
+| **Slide 7 (#7)** | 電競之神：Faker 六冠王朝 | `wiki/raw/03_esports_phenomenon_and_worlds.md` | 介紹十二載堅持的電競代表人物李相赫（累積 6 座世界大賽冠軍） |
 | **Slide 8 (#8)** | 音樂唱片公司：K/DA 破圈 | `wiki/raw/04_business_model_and_player_culture.md` | 分析虛擬偶像與主題曲引爆主流流行文化的策略 |
 | **Slide 9 (#9)** | 影視神作：奧術艾美獎 | `wiki/raw/05_ip_expansion_and_future_universe.md` | 介紹符文大地宇宙跨媒介成功案例 |
 | **Slide 10 (#10)**| 總結與核心啟示 | `wiki/synthesis/cultural_and_esports_impact.md` | 總結 20 年長青秘訣並提供新手問答 (Q&A) |
@@ -147,7 +147,7 @@ flowchart TD
     {
       "gate": "Gate 3: Fact Auditor Gate",
       "result": "PASS (10/10 頁全面通過)",
-      "notes": "10 頁所有年份、數據、人物與獎項 100% 成功映射至 wiki/raw/ 來源。"
+        {"slide": 7, "fact": "Faker 6 world titles (S3, S5, S6, S13, S14, S15)", "verified": true, "ref": "wiki/raw/03_esports_phenomenon_and_worlds.md"},
     },
     {
       "gate": "Gate 4: UI/UX & Navigation Hash Gate",
